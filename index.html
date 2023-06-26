@@ -25,12 +25,15 @@
             <h3>Search for movies</h3>
           <div class="search__bar">
             <input
-              type="search"
+              type="text"
               placeholder="Search your movie"
               class="search"
               onchange="searchInput(event)"
             />
-            <i class="fa-solid fa-magnifying-glass"></i>
+            
+            <div class="search__movies" onclick="showMovies()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
           </div>
         </div>
       </div>

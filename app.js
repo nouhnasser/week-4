@@ -1,27 +1,38 @@
 // http://www.omdbapi.com/?i=tt3896198&apikey=3089f95a
+let moviesHTML = document.querySelector(".movies");
+let moviesList = [];
 
-moviesHTML = document.querySelector(".movies")
-
-
-
- async function main() {
-    const movies = await fetch(`https://www.omdbapi.com/?s=avengers&page=1&apikey=3089f95a`)
-    const moviesData = await movies.json()
-    const moviesList = moviesData.Search
-    moviesHTML.innerHTML = moviesList.map((movie) => moviesShow(movie)).join('')
-   
+async function main(search) {
+  let movies = await fetch(
+    https://www.omdbapi.com/?i=tt3896198&apikey=bdab0567&s=${search}
+  );
+  let moviesData = await movies.json();
+  moviesList = moviesData.Search;
+  moviesHTML.innerHTML = moviesData.Search.map((movie) =>
+    moviesShow(movie)
+  ).join("");
 }
 
+function searchInput(event) {
+  const search = event.target.value;
+
+  event.preventDefault();
+  moviesShow(search);
+}
 
 function moviesShow(movie) {
-    return `<div class="movie">
+  return <div class="movie">
     <figure class="movie__img--wrapper">
-      <img src="${movie.Poster}" alt="" class="movie__img">
+      <img src="${movie.Poster}" alt="" class="movie__img"/>
     </figure>
     <div class="movie__description">
     <p class="movie__name">${movie.Title}</p>
     <p class="movie__date">${movie.Year}</p>
   </div>
-  </div>`;
+  </div>;
 }
-main()
+main();
+
+function showMovies() {
+  moviesHTML.style.display = "flex";
+}
