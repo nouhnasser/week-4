@@ -85,7 +85,7 @@ h3 {
     border: none;
     padding: 12px 24px;
     font-size: 18px;
-    color: #fff;
+    color: black;
 }
 
 i {
@@ -108,6 +108,7 @@ content
     min-height: 60vh;
     width: 100%;
     color: #fff;
+    position: relative;
 }
 
 .container {
@@ -124,6 +125,7 @@ content
 .movies {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .movie {
@@ -142,3 +144,49 @@ content
     width: 100%;
     padding: 0 12px;
 }
+
+.movie__name,
+.movie__date {
+    margin: 12px 0;
+    font-size: 20px;
+}
+
+
+.movies__loading {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    font-size: 60px;
+    color: #fff;
+  }
+  
+  .fa-spinner {
+    position: absolute;
+    top: 100px;
+    right: 50%;
+    animation: rotate 600ms infinite linear;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+     
+  }
+
+  .movies__loading--spinner {
+    display: none !important;
+  }
+  
+  .movies__loading .movies__loading--spinner {
+    display: block !important;
+  }
+  
+  /*
+  

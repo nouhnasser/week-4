@@ -28,6 +28,7 @@
               type="search"
               placeholder="Search your movie"
               class="search"
+              onchange="searchInput(event)"
             />
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
@@ -42,8 +43,9 @@
           Featured Movies
          </h2>
         </div>
-        <div class="movies">
-          <div class="movie">
+        <div class="movies movies__loading">
+          <i class="fas fa-spinner movie__loading--spinner"></i>
+          <div class="movie ">
             <figure class="movie__img--wrapper">
               <img src="" alt="" class="movie__img">
             </figure>

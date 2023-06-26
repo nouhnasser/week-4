@@ -1,16 +1,18 @@
 // http://www.omdbapi.com/?i=tt3896198&apikey=3089f95a
 
 moviesHTML = document.querySelector(".movies")
+
+
+
  async function main() {
-    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=3089f95a`)
+    const movies = await fetch(`https://www.omdbapi.com/?s=avengers&page=1&apikey=3089f95a`)
     const moviesData = await movies.json()
-    moviesHTML.innerHTML = moviesData.Search.map((movie) => moviesShow(movie)).join()
-    console.log(moviesData)
+    const moviesList = moviesData.Search
+    moviesHTML.innerHTML = moviesList.map((movie) => moviesShow(movie)).join('')
+   
 }
 
 
-
-main()
 function moviesShow(movie) {
     return `<div class="movie">
     <figure class="movie__img--wrapper">
@@ -22,5 +24,4 @@ function moviesShow(movie) {
   </div>
   </div>`;
 }
-
-
+main()
