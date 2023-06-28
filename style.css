@@ -113,6 +113,7 @@ content
 
 .container {
     margin: 0 32px;
+    display: none;
 }
 
 .section__title {
@@ -180,13 +181,14 @@ content
      
   }
 
-  .movies__loading--spinner {
-    display: none !important;
-  }
-  
-  .movies__loading .movies__loading--spinner {
-    display: block !important;
-  }
   
   /*
+
+
   
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+    .movie {
+        width: calc(100% / 2);
+    }
+}
