@@ -3,7 +3,7 @@ let moviesList = [];
 
 async function main(search) {
   let movies = await fetch(
-    ` http://www.omdbapi.com/?i=tt3896198&apikey=d90f3a14&s=${search}`
+    ` https://www.omdbapi.com/?i=tt3896198&apikey=d90f3a14&s=${search}`
   );
   let moviesData = await movies.json();
   moviesList = moviesData.Search;
