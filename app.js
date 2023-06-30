@@ -34,5 +34,5 @@ function moviesShow(movie) {
 main();
 
 function showMovies() {
-  moviesHTML.style.display = "flex";
+  moviesHTML.style.display = "block";
 }
